@@ -17,13 +17,13 @@
   a{color:inherit;text-decoration:none}
   h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.4px;line-height:.96}
   .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
-  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14px;padding:14px 28px;border-radius:4px;transition:.2s;cursor:pointer;text-transform:uppercase;letter-spacing:.04em}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14px;padding:14px 28px;border-radius:5px;transition:.2s;cursor:pointer;text-transform:uppercase;letter-spacing:.04em}
   .btn-blue{background:var(--accent);color:#fff}
   .btn-blue:hover{background:#2076d6;transform:translateY(-1px)}
-  .btn-out{border:1.5px solid var(--line);color:var(--text)}
-  .btn-out:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-dark{background:rgba(10,10,12,.55);border:1px solid rgba(243,243,239,.35);color:#fff;backdrop-filter:blur(4px)}
+  .btn-dark:hover{border-color:#fff}
 
-  nav{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
   .nav-in img{height:40px;width:auto;display:block}
   .nav-links{display:flex;gap:32px;align-items:center}
@@ -32,59 +32,100 @@
   .nav-links .btn{padding:10px 20px}
   @media(max-width:820px){.nav-links a:not(.btn){display:none}}
 
-  /* HERO */
-  .hero{position:relative;min-height:76vh;display:flex;align-items:center;background:linear-gradient(180deg,rgba(10,10,12,.4),rgba(10,10,12,.72) 58%,rgba(10,10,12,.99)),url('img/gym-floor.jpg') center/cover no-repeat;background-color:#15151a}
-  .hero-in{padding:70px 0 150px}
-  .hero h1{font-size:clamp(52px,11vw,128px);margin:16px 0 0}
-  .hero h1 .hl{color:var(--accent)}
-  .hero p{font-size:clamp(17px,2.2vw,21px);color:#D4D4CE;max-width:47ch;margin:22px 0 0}
+  /* TICKER */
+  .mq{overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line);background:var(--bg);padding:11px 0}
+  .mq-in{display:inline-block;animation:mq 30s linear infinite;font-family:'Anton',sans-serif;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .mq-in b{color:var(--accent);font-weight:400}
+  @keyframes mq{to{transform:translateX(-50%)}}
 
-  /* THREE PILLARS - lifted over hero base */
-  .pillars{position:relative;z-index:5;margin-top:-92px;padding-bottom:100px}
-  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .pcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:32px 28px;transition:.25s;display:flex;flex-direction:column}
-  .pcard:hover{border-color:var(--accent);transform:translateY(-4px)}
-  .pcard .pi{font-size:30px;color:var(--accent)}
-  .pcard .pk{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:18px}
-  .pcard h3{font-size:26px;margin:8px 0 12px}
-  .pcard p{color:var(--muted);font-size:14.5px;flex:1}
-  .pcard .plink{margin-top:22px;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:#fff;display:inline-flex;gap:9px;align-items:center}
-  .pcard .plink i{transition:.25s}
-  .pcard:hover .plink i{transform:translateX(5px);color:var(--accent)}
-  @media(max-width:860px){.pgrid{grid-template-columns:1fr}.pillars{margin-top:-50px}}
+  /* COMPOSED OPENING FRAME: 2 descriptive left / 3 focus right */
+  .frame{padding:26px 0 30px}
+  .duo{display:grid;grid-template-columns:1.16fr .84fr;gap:14px;min-height:calc(100vh - 170px)}
+  .colL,.colR{display:flex;flex-direction:column;gap:14px}
+  .tile{position:relative;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden;padding:30px 28px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;transition:.22s}
+  a.tile:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .tile .tk{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .tile .tk em{color:var(--accent);font-style:normal}
+  .tile .arr{position:absolute;top:20px;right:20px;color:var(--muted);font-size:20px;transition:.22s}
+  a.tile:hover .arr{color:var(--accent);transform:translateX(4px)}
 
-  section{padding:100px 0}
-  .shead{margin-bottom:46px}
-  .shead h2{font-size:clamp(34px,6vw,60px);margin-top:14px}
-  .shead p{color:var(--muted);font-size:16px;max-width:54ch;margin-top:14px}
+  /* LEFT 1 — the manifesto */
+  .t-mani{flex:1.45;justify-content:flex-end}
+  .t-mani::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,12,.3),rgba(10,10,12,.9)),url('img/gym-floor.jpg') center/cover;filter:brightness(.65)}
+  .t-mani h1{font-size:clamp(42px,5.8vw,78px);margin-top:10px}
+  .t-mani h1 .solid{display:block}
+  .t-mani h1 .ghost{display:block;color:transparent;-webkit-text-stroke:2px var(--accent)}
+  .t-mani p{color:#D6D6D0;font-size:15.5px;max-width:52ch;margin:16px 0 22px}
+  .t-mani .ctas{display:flex;gap:10px;flex-wrap:wrap}
 
-  .trainers{background:linear-gradient(rgba(10,10,12,.83),rgba(10,10,12,.9)),url('img/gym-floor-2.jpg') center/cover;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .perks{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .perk{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:26px}
-  .perk i{font-size:28px;color:var(--accent)}
-  .perk h3{font-size:19px;margin:14px 0 8px}
-  .perk p{color:var(--muted);font-size:14px}
-  @media(max-width:820px){.perks{grid-template-columns:1fr}}
+  /* LEFT 2 — what The Lab is */
+  .t-what{flex:1;justify-content:center}
+  .t-what h3{font-size:clamp(20px,2vw,26px);margin:8px 0 14px}
+  .t-what .li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);color:#C9C9C3;font-size:14.5px;line-height:1.5}
+  .t-what .li:first-of-type{border-top:0}
+  .t-what .li i{color:var(--accent);font-size:18px;flex:none;margin-top:2px}
+  .t-what .li b{color:var(--text)}
 
-  .srow{display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;padding:32px 12px;border-top:1px solid var(--line);transition:.2s}
-  .srow:last-child{border-bottom:1px solid var(--line)}
-  .srow:hover{background:var(--surface);padding-left:22px}
-  .srow .num{font-family:'Anton',sans-serif;font-size:22px;color:var(--accent)}
-  .srow h3{font-size:clamp(24px,3.4vw,36px)}
-  .srow .d{color:var(--muted);font-size:15px;margin-top:6px;max-width:56ch}
-  .srow .soon{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:3px 9px;border-radius:3px;margin-left:12px}
-  .srow .go i{color:var(--muted);font-size:22px;transition:.2s}
-  .srow:hover .go i{color:var(--accent);transform:translateX(6px)}
+  /* RIGHT — the three focuses */
+  .colR .tile{flex:1}
+  .t-members .ring{position:absolute;top:20px;right:20px;width:58px;height:58px;border-radius:50%;background:conic-gradient(var(--accent) 0 78%, var(--line) 0);display:grid;place-items:center}
+  .t-members .ring::before{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--surface)}
+  .t-members .ring b{position:relative;font-family:'Anton',sans-serif;font-size:15px;color:var(--text);font-weight:400}
+  .t-members .ring i{position:relative;font-size:20px;color:var(--text)}
+  .t-members h3,.t-trainersR h3,.t-services h3{font-size:clamp(22px,2.3vw,30px);margin-top:8px}
+  .tile .d{color:var(--muted);font-size:13.5px;margin-top:8px;max-width:44ch}
+  .tile .d b{color:var(--text)}
+  .t-trainersR{justify-content:flex-end}
+  .t-services .svc-mini{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+  .t-services .chip{border:1px solid var(--line);background:var(--surface2);border-radius:30px;padding:5px 12px;font-size:11.5px;font-weight:600}
+  .t-services .chip em{color:var(--accent);font-style:normal}
 
-  .join{position:relative;background:linear-gradient(rgba(10,10,12,.8),rgba(10,10,12,.8)),url('img/gym-floor.jpg') center/cover;border-top:1px solid var(--line)}
-  .join-in{padding:104px 0;text-align:center}
-  .join .limit{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:26px}
-  .join .price{font-family:'Anton',sans-serif;font-size:clamp(60px,12vw,132px);line-height:.9;text-transform:uppercase}
-  .join .price span{color:var(--accent)}
-  .join .sub{color:#CFCFC9;font-size:16px;margin:16px 0 6px}
-  .join .fine{color:var(--muted);font-size:13px;margin-bottom:32px}
+  @media(max-width:900px){
+    .duo{grid-template-columns:1fr;min-height:0}
+    .t-mani{min-height:430px}
+    .t-what,.colR .tile{min-height:200px}
+  }
 
-  footer{border-top:1px solid var(--line);padding:58px 0 42px}
+  /* CHAPTERS (from E) */
+  .chapter{min-height:88vh;display:flex;align-items:center;border-top:1px solid var(--line);position:relative;isolation:isolate;overflow:hidden}
+  .chapter .ch-in{display:grid;grid-template-columns:150px 1fr;gap:40px;width:100%;padding:86px 0}
+  .chapter .ch-num{font-family:'Anton',sans-serif;font-size:clamp(60px,8vw,120px);color:transparent;-webkit-text-stroke:2px var(--line);line-height:1;position:sticky;top:120px;align-self:start}
+  .chapter.on-photo .ch-num{-webkit-text-stroke:2px rgba(243,243,239,.35)}
+  .chapter h2{font-size:clamp(38px,6.4vw,84px);max-width:14ch}
+  .chapter .ch-kick{margin-bottom:16px}
+  .chapter .ch-copy{color:#C9C9C3;font-size:17px;max-width:56ch;margin:24px 0 32px}
+  .chapter .ch-copy b{color:var(--text)}
+  @media(max-width:820px){.chapter .ch-in{grid-template-columns:1fr}.chapter .ch-num{position:static}}
+
+  .ch-trainers{background:linear-gradient(100deg,rgba(10,10,12,.94) 34%,rgba(10,10,12,.55)),url('img/gym-floor-2.jpg') center/cover no-repeat}
+  .ch-members{background:linear-gradient(100deg,rgba(10,10,12,.95) 40%,rgba(46,134,230,.28)),url('img/gym-floor.jpg') center/cover no-repeat}
+
+  .promise{display:flex;flex-wrap:wrap;gap:12px}
+  .chip2{border:1px solid var(--line);background:rgba(20,20,23,.72);border-radius:40px;padding:11px 20px;font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;gap:9px}
+  .chip2 i{color:var(--accent);font-size:17px}
+
+  .svc{border-top:1px solid var(--line)}
+  .svc:last-child{border-bottom:1px solid var(--line)}
+  .svc{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:30px 6px;transition:.2s}
+  .svc:hover{background:var(--surface);padding-left:18px}
+  .svc h3{font-size:clamp(24px,3.4vw,40px)}
+  .svc .d2{color:var(--muted);font-size:15px;margin-top:6px;max-width:54ch}
+  .svc .soon{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:3px 9px;border-radius:3px;margin-left:12px;vertical-align:middle}
+  .svc .go i{color:var(--muted);font-size:24px;transition:.2s}
+  .svc:hover .go i{color:var(--accent);transform:translateX(6px)}
+
+  .price-wall .limit{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:22px}
+  .price-wall .price{font-family:'Anton',sans-serif;font-size:clamp(70px,13vw,160px);line-height:.88;text-transform:uppercase}
+  .price-wall .price em{color:var(--accent);font-style:normal}
+  .price-wall .sub{color:#D6D6D0;font-size:17px;margin:20px 0 4px}
+  .price-wall .fine{color:var(--muted);font-size:13px;margin-bottom:30px}
+
+  .claim{border-top:1px solid var(--line);padding:106px 0;text-align:center}
+  .claim h2{font-size:clamp(44px,9vw,120px)}
+  .claim h2 em{color:transparent;-webkit-text-stroke:2px var(--accent);font-style:normal}
+  .claim p{color:var(--muted);margin:18px 0 34px;font-size:16px}
+
+  footer{border-top:1px solid var(--line);padding:56px 0 42px}
   .foot{display:flex;justify-content:space-between;gap:44px;flex-wrap:wrap;align-items:flex-start}
   .foot img{height:40px;margin-bottom:14px}
   .foot p,.foot a{color:var(--muted);font-size:14px;line-height:1.95}
@@ -99,77 +140,118 @@
 <nav><div class="wrap nav-in">
   <img src="img/logo-mark.png" alt="The Lab">
   <div class="nav-links">
-    <a href="#trainers">Trainers</a>
-    <a href="#services">Services</a>
     <a href="#join">Membership</a>
+    <a href="#services">Services</a>
+    <a href="#trainers">Trainers</a>
     <a href="https://thelabfitnessandwellness.virtuagym.com/webshop/?club=aXNacTFGVzU3ZHYwc3Zic0JBWEx6Zz09" target="_blank" rel="noopener" class="btn btn-blue">Join</a>
   </div>
 </div></nav>
 
-<!-- HERO STATEMENT -->
-<header class="hero"><div class="wrap hero-in">
-  <div class="eyebrow">Waco, TX · Open 24/7 · 200 members only</div>
-  <h1>Where Waco <span class="hl">trains.</span></h1>
-  <p>A trainer-first 24/7 studio — independent coaches, licensed massage, and guided programs. No contracts.</p>
-</div></header>
+<div class="mq"><div class="mq-in">
+  Where Waco trains <b>·</b> Limited memberships <b>·</b> Open 24/7 <b>·</b> No contracts <b>·</b> Trainers keep 100% <b>·</b>&nbsp;
+  Where Waco trains <b>·</b> Limited memberships <b>·</b> Open 24/7 <b>·</b> No contracts <b>·</b> Trainers keep 100% <b>·</b>&nbsp;
+</div></div>
 
-<!-- THREE PILLARS front and center -->
-<section class="pillars" style="padding-top:0"><div class="wrap">
-  <div class="pgrid">
-    <a class="pcard" href="#trainers">
-      <i class="ti ti-barbell pi"></i>
-      <div class="pk">For Trainers</div>
-      <h3>Grow your brand</h3>
-      <p>Freedom to train, freedom to grow your brand. No upfront costs, no trainer fees — keep 100% of your training income.</p>
-      <span class="plink">For trainers <i class="ti ti-arrow-right"></i></span>
-    </a>
-    <a class="pcard" href="#services">
-      <i class="ti ti-stretching pi"></i>
-      <div class="pk">Services</div>
-      <h3>Three ways to train</h3>
-      <p>Personal training, licensed massage, and guided programs — custom workouts, macros, and body scans.</p>
-      <span class="plink">See services <i class="ti ti-arrow-right"></i></span>
-    </a>
-    <a class="pcard" href="#join">
-      <i class="ti ti-key pi"></i>
-      <div class="pk">Membership</div>
-      <h3>Only 200 members</h3>
-      <p>$50/mo + tax, rate locked for life. 24/7 access, no contract, $25 one-time signup.</p>
-      <span class="plink">Become a member <i class="ti ti-arrow-right"></i></span>
-    </a>
+<!-- OPENING FRAME: left = what The Lab is · right = the three focuses -->
+<div class="frame"><div class="wrap">
+  <div class="duo">
+
+    <div class="colL">
+      <div class="tile t-mani">
+        <div class="tk"><em>The Lab</em> · Waco, TX</div>
+        <h1><span class="solid">Freedom to train.</span><span class="ghost">Freedom to grow.</span></h1>
+        <p>A 24/7 training and wellness studio built around independent fitness and wellness professionals.</p>
+        <div class="ctas">
+          <a href="https://thelabfitnessandwellness.virtuagym.com/webshop/?club=aXNacTFGVzU3ZHYwc3Zic0JBWEx6Zz09" target="_blank" rel="noopener" class="btn btn-blue">Membership &amp; Services</a>
+          <a href="#trainers" class="btn btn-dark">I'm a trainer</a>
+        </div>
+      </div>
+      <div class="tile t-what">
+        <div class="tk">What The Lab is</div>
+        <h3>A gym that works like a studio.</h3>
+        <div class="li"><i class="ti ti-users-group"></i><span><b>Independent professionals under one roof.</b> Coaches and a licensed massage therapist run their own practices from our facility.</span></div>
+        <div class="li"><i class="ti ti-lock"></i><span><b>Gym membership is limited</b> to prevent overcrowding.</span></div>
+        <div class="li"><i class="ti ti-plus"></i><span>Gym membership is separate from professional services offered at The Lab. <b>Services are optional.</b></span></div>
+        <div class="li"><i class="ti ti-bolt"></i><span><b>One simple membership.</b> $50/mo, 24/7 key access, no contract — add Guided Training or services from independent professionals when you're ready for more.</span></div>
+      </div>
+    </div>
+
+    <div class="colR">
+      <a class="tile t-members" href="#join">
+        <div class="ring"><i class="ti ti-lock"></i></div>
+        <i class="ti ti-arrow-up-right arr" style="right:88px"></i>
+        <div class="tk"><em>01</em> · Members</div>
+        <h3>Limited memberships.</h3>
+        <div class="d"><b>$50/mo + tax</b>. $25 one-time signup. 24/7 access, no contract.</div>
+      </a>
+      <a class="tile t-services" href="#services">
+        <i class="ti ti-arrow-up-right arr"></i>
+        <div class="tk"><em>02</em> · Services</div>
+        <h3>Additional services.</h3>
+        <div class="d">Work with a coach, book recovery, or follow a guided plan.</div>
+        <div class="d" style="font-style:italic;font-size:12px;margin-top:4px">Services not included in membership.</div>
+        <div class="svc-mini"><span class="chip">Personal training</span><span class="chip">Massage therapy</span><span class="chip">Guided training <em>add-on</em></span><span class="chip">Body comp analysis <em>add-on</em></span></div>
+      </a>
+      <a class="tile t-trainersR" href="#trainers">
+        <i class="ti ti-arrow-up-right arr"></i>
+        <div class="tk"><em>03</em> · Trainers</div>
+        <h3>Train free. Grow your brand.</h3>
+        <div class="d">No upfront costs, no trainer fees. Bring your clients — <b>keep 100%</b> of your training income.</div>
+      </a>
+    </div>
+
+  </div>
+</div></div>
+
+<!-- 01 MEMBERSHIP -->
+<section class="chapter ch-members" id="join"><div class="wrap ch-in">
+  <div class="ch-num">01</div>
+  <div class="price-wall">
+    <div class="eyebrow ch-kick">Membership</div>
+    <div class="limit">Limited memberships</div>
+    <div class="price"><em>$50</em>/Month</div>
+    <div class="sub">24/7 access. No contract.</div>
+    <div class="fine">+ tax · $25 one-time signup fee</div>
+    <a href="https://thelabfitnessandwellness.virtuagym.com/webshop/?club=aXNacTFGVzU3ZHYwc3Zic0JBWEx6Zz09" target="_blank" rel="noopener" class="btn btn-blue">Become a member</a>
   </div>
 </div></section>
 
-<!-- TRAINERS -->
-<section class="trainers" id="trainers"><div class="wrap">
-  <div class="shead">
-    <div class="eyebrow">For Trainers</div>
+<!-- 02 SERVICES -->
+<section class="chapter" id="services"><div class="wrap ch-in">
+  <div class="ch-num">02</div>
+  <div style="width:100%">
+    <div class="eyebrow ch-kick">For Members · Services</div>
+    <h2>Additional services.</h2>
+    <p class="ch-copy">Every coach and therapist here runs their own practice. You bring the goals; they bring the expertise. <i style="color:var(--muted)">Services are optional and not included in membership.</i></p>
+    <a class="svc" href="coaches.html"><div><h3>Personal training</h3><div class="d2">One-on-one with an independent coach who builds programming around your goals.</div></div><div class="go"><i class="ti ti-arrow-right"></i></div></a>
+    <a class="svc" href="osiel.html"><div><h3>Massage therapy</h3><div class="d2">Performance bodywork with Osiel Alvarez, LMT (Elite Athletic Bodywork) — sports massage, cupping, and Graston, booked right inside the gym.</div></div><div class="go"><i class="ti ti-arrow-right"></i></div></a>
+    <a class="svc" href="#join"><div><h3>Guided training <span class="soon">Add-on</span></h3><div class="d2">Custom workouts with nutrition and macro guidance — an add-on to your membership.</div></div><div class="go"><i class="ti ti-arrow-right"></i></div></a>
+    <a class="svc" href="#join"><div><h3>Body comp analysis <span class="soon">Add-on</span></h3><div class="d2">Body-composition scans to benchmark where you are and track your progress — an add-on to your membership.</div></div><div class="go"><i class="ti ti-arrow-right"></i></div></a>
+  </div>
+</div></section>
+
+<!-- 03 TRAINERS -->
+<section class="chapter ch-trainers" id="trainers"><div class="wrap ch-in">
+  <div class="ch-num">03</div>
+  <div>
+    <div class="eyebrow ch-kick">For Trainers</div>
     <h2>Freedom to train, freedom to grow your brand.</h2>
-    <p>The Lab is built for independent coaches. No upfront costs, no trainer fees — bring your clients, keep every dollar you earn, and let us handle the space.</p>
+    <p class="ch-copy">No upfront costs. No trainer fees. Bring your clients — they join as members — and run your practice out of a 24/7 home base. <b>Every dollar you earn training is yours.</b> We make our money on memberships, not on you.</p>
+    <div class="promise">
+      <span class="chip2"><i class="ti ti-cash-off"></i> No rent, no fees</span>
+      <span class="chip2"><i class="ti ti-user-heart"></i> Keep 100% of your income</span>
+      <span class="chip2"><i class="ti ti-clock-24"></i> Train on your schedule</span>
+      <span class="chip2"><i class="ti ti-building-store"></i> Build your brand here</span>
+    </div>
+    <div style="margin-top:34px"><a href="mailto:josh@thelabwaco.com?subject=Training%20at%20The%20Lab" class="btn btn-blue">Talk to us about training here</a></div>
   </div>
-  <div class="perks">
-    <div class="perk"><i class="ti ti-cash-off"></i><h3>No trainer fees</h3><p>Train your clients here with zero rent and no upfront cost. Your business, your rates.</p></div>
-    <div class="perk"><i class="ti ti-user-heart"></i><h3>Keep 100%</h3><p>Every dollar of your training income is yours. We earn on memberships, not on you.</p></div>
-    <div class="perk"><i class="ti ti-building-store"></i><h3>Grow your brand</h3><p>A 24/7 home base with the floor, the tools, and the community to build your book.</p></div>
-  </div>
-  <div style="margin-top:34px"><a href="mailto:josh@thelabwaco.com?subject=Training%20at%20The%20Lab" class="btn btn-blue">Talk to us about training here</a></div>
 </div></section>
 
-<!-- SERVICES -->
-<section id="services"><div class="wrap">
-  <div class="shead"><div class="eyebrow">For Members · Services</div><h2>Three ways to train.</h2><p>Every coach and therapist here runs their own practice. You bring the goals; they bring the expertise.</p></div>
-  <a class="srow" href="coaches.html"><div class="num">01</div><div><h3>Personal training</h3><div class="d">One-on-one with an independent coach who builds programming around your goals.</div></div><div class="go"><i class="ti ti-arrow-right"></i></div></a>
-  <a class="srow" href="osiel.html"><div class="num">02</div><div><h3>Massage therapy</h3><div class="d">Performance bodywork with Osiel Alvarez, LMT (Elite Athletic Bodywork) — sports massage, cupping, and Graston, booked right inside the gym.</div></div><div class="go"><i class="ti ti-arrow-right"></i></div></a>
-  <a class="srow" href="#join"><div class="num">03</div><div><h3>Guided training <span class="soon">Add-on</span></h3><div class="d">Custom workouts, nutrition and macro guidance, plus body scans — an add-on to your membership.</div></div><div class="go"><i class="ti ti-arrow-right"></i></div></a>
-</div></section>
-
-<!-- MEMBERSHIP -->
-<section class="join" id="join"><div class="wrap join-in">
-  <div class="limit">Limited to 200 members</div>
-  <div class="price"><span>$50</span>/Month</div>
-  <div class="sub">24/7 access. No contract. Lock today's rate for life.</div>
-  <div class="fine">+ tax · $25 one-time signup fee</div>
-  <a href="https://thelabfitnessandwellness.virtuagym.com/webshop/?club=aXNacTFGVzU3ZHYwc3Zic0JBWEx6Zz09" target="_blank" rel="noopener" class="btn btn-blue">Become a member</a>
+<!-- CLAIM -->
+<section class="claim"><div class="wrap">
+  <h2>Limited memberships. <em>Avoid the crowd.</em></h2>
+  <p>2912 Franklin Ave · Waco, TX · Open 24 hours, 7 days</p>
+  <a href="https://thelabfitnessandwellness.virtuagym.com/webshop/?club=aXNacTFGVzU3ZHYwc3Zic0JBWEx6Zz09" target="_blank" rel="noopener" class="btn btn-blue">Claim your spot</a>
 </div></section>
 
 <footer><div class="wrap">
@@ -178,7 +260,7 @@
       <img src="img/logo-mark.png" alt="The Lab">
       <p>2912 Franklin Ave<br>Waco, TX 76710<br>Open 24 hours, 7 days</p>
     </div>
-    <div class="fcol"><h4>Explore</h4><a href="#trainers">Trainers</a><a href="#services">Services</a><a href="coaches.html">Coaches</a><a href="#join">Membership</a></div>
+    <div class="fcol"><h4>Explore</h4><a href="#join">Membership</a><a href="#services">Services</a><a href="#trainers">Trainers</a><a href="coaches.html">Coaches</a></div>
     <div class="fcol"><h4>Contact</h4><a href="tel:2547229587">(254) 722-9587</a><a href="mailto:josh@thelabwaco.com">josh@thelabwaco.com</a><a href="#">Instagram</a><a href="#">Facebook</a></div>
   </div>
   <div class="copy">© 2026 The Lab Fitness &amp; Wellness</div>
