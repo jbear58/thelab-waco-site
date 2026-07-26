@@ -1,0 +1,33 @@
+# The Lab Fitness & Wellness
+
+> The Lab is a 24/7 gym and wellness studio at 2912 Franklin Ave, Waco, TX 76710. Membership is $50 a month plus tax with a one-time $50 signup fee, no contract, and 24/7 key access. Memberships are limited so the floor never gets crowded. Independent personal trainers and a licensed massage therapist run their own practices at The Lab, and trainers pay no rent or fees.
+
+Phone: (254) 722-9587
+Email: josh@thelabwaco.com
+Hours: open 24 hours, 7 days a week
+
+## Membership
+
+- [Membership](https://thelabwaco.com/#membership): $50/month + tax, one-time $50 signup fee, no contract, 24/7 key access, limited availability. New members join online through the VirtuaGym webshop.
+- Optional tools add-on: $10/month for InBody body-composition scans plus app and website tools.
+
+## Services (optional, not included in membership)
+
+- [Services overview](https://thelabwaco.com/services.html): what The Lab offers and how services relate to membership.
+- [Personal training](https://thelabwaco.com/personal-training.html): one-on-one coaching with independent trainers who set their own rates and book directly.
+- [Guided Training](https://thelabwaco.com/guided-training.html): The Lab's own coaching program, $100/month add-on. Kickoff InBody scan and goals intake, a custom training plan with personal macro targets in the app, monthly re-scan and program refresh, and coach messaging. Not in-person personal training.
+- [Nutrition coaching](https://thelabwaco.com/nutrition-coaching.html): macro guidance included with Guided Training. General fitness guidance, not medical nutrition therapy.
+- [Massage & recovery](https://thelabwaco.com/massage-recovery.html): sports massage, cupping, and Graston with Osiel Alvarez, LMT (Elite Athletic Bodywork), booked directly.
+- [Wellness](https://thelabwaco.com/wellness.html): how gym access, coaching, bodywork, and progress tools fit together.
+
+## People
+
+- [Coaches & therapists](https://thelabwaco.com/coaches.html): the independent professionals practicing at The Lab.
+- [Dayton Malone](https://thelabwaco.com/dayton.html): competition and lifestyle coaching.
+- [Kelvin Robinson](https://thelabwaco.com/kelvin.html): HighPower Fitness, one-on-one coaching, group fitness, student-athlete performance.
+- [Keenan Alford](https://thelabwaco.com/keenan.html): Reinforced Fitness, one-on-one personal training.
+- [Osiel Alvarez, LMT](https://thelabwaco.com/osiel.html): Elite Athletic Bodywork, sports massage.
+
+## For trainers
+
+- [Train your clients at The Lab](https://thelabwaco.com/trainers.html): independent trainers pay no rent and no fees and keep 100% of their training income. Their clients hold an active $50/month gym membership. Trainers need an industry-recognized certification and their own liability insurance. Non-exclusive; trainers may work anywhere.
