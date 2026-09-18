@@ -40,6 +40,17 @@
     var href = link.getAttribute('href') || '';
     var locationName = ctaLocation(link);
 
+    var inquiry = link.getAttribute('data-inquiry');
+    var coach = link.getAttribute('data-coach');
+    if (inquiry) {
+      sendEvent('coach_inquiry_click', { coach: coach, method: inquiry });
+      sendEvent('generate_lead', {
+        lead_type: 'coach_inquiry',
+        cta_location: locationName
+      });
+      return;
+    }
+
     if (href.indexOf('tel:') === 0) {
       sendEvent('phone_click', { cta_location: locationName });
       sendEvent('generate_lead', {
@@ -93,7 +104,12 @@
       return;
     }
 
-    var coachPages = ['dayton.html', 'kelvin.html', 'keenan.html', 'osiel.html'];
+    if (destination.hostname === 'sustainfitnesswaco.com') {
+      sendEvent('coach_site_click', { coach: 'maria' });
+      return;
+    }
+
+    var coachPages = ['dayton.html', 'maria.html', 'randal.html', 'osiel.html'];
     var destinationPage = destination.pathname.split('/').pop();
     if (destination.origin === window.location.origin && coachPages.indexOf(destinationPage) !== -1) {
       sendEvent('coach_profile_view', {

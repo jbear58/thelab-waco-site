@@ -1,6 +1,6 @@
 # The Lab Fitness & Wellness
 
-> The Lab is a 24/7 gym and wellness studio at 2912 Franklin Ave, Waco, TX 76710. Membership is $50 a month plus tax with a one-time $50 signup fee, no contract, and 24/7 key access. Memberships are limited so the floor never gets crowded. Independent personal trainers and a licensed massage therapist run their own practices at The Lab, and trainers pay no rent or fees.
+> The Lab is a private, members-only 24/7 gym and wellness studio at 2912 Franklin Ave, Waco, TX 76710. Membership is $50 a month plus tax with a one-time $20 signup fee, no contract, and 24/7 key access. Memberships are limited so the floor never gets crowded. Independent personal trainers and a licensed massage therapist run their own practices at The Lab, and trainers pay no rent or fees.
 
 Phone: (254) 470-8927
 Email: josh@thelabwaco.com
@@ -17,7 +17,7 @@ Hours: open 24 hours, 7 days a week
 - [Services overview](https://thelabwaco.com/services.html): what The Lab offers and how services relate to membership.
 - [Personal training](https://thelabwaco.com/personal-training.html): one-on-one coaching with independent trainers who set their own rates and book directly.
 - [Guided Training](https://thelabwaco.com/guided-training.html): The Lab's own coaching program, $100/month add-on. Kickoff InBody scan and goals intake, a custom training plan with personal macro targets in the app, monthly re-scan and program refresh, and coach messaging. Not in-person personal training.
-- [Nutrition coaching](https://thelabwaco.com/nutrition-coaching.html): macro guidance included with Guided Training. General fitness guidance, not medical nutrition therapy.
+- [Nutrition coaching](https://thelabwaco.com/nutrition-coaching.html): delivered by the independent trainers who run your training. Starts with a consultation; macro targets and InBody scans track progress. General fitness guidance, not medical nutrition therapy.
 - [Massage & recovery](https://thelabwaco.com/massage-recovery.html): sports massage, cupping, and Graston with Osiel Alvarez, LMT (Elite Athletic Bodywork), booked directly.
 - [Wellness](https://thelabwaco.com/wellness.html): how gym access, coaching, bodywork, and progress tools fit together.
 
@@ -25,8 +25,8 @@ Hours: open 24 hours, 7 days a week
 
 - [Coaches & therapists](https://thelabwaco.com/coaches.html): the independent professionals practicing at The Lab.
 - [Dayton Malone](https://thelabwaco.com/dayton.html): competition and lifestyle coaching.
-- [Kelvin Robinson](https://thelabwaco.com/kelvin.html): HighPower Fitness, one-on-one coaching, group fitness, student-athlete performance.
-- [Keenan Alford](https://thelabwaco.com/keenan.html): Reinforced Fitness, one-on-one personal training.
+- [Maria Cambra](https://thelabwaco.com/maria.html): women's health and fitness coaching. Her roster is currently full.
+- [Randal Moos](https://thelabwaco.com/randal.html): functional and adaptive training, nutrition coaching.
 - [Osiel Alvarez, LMT](https://thelabwaco.com/osiel.html): Elite Athletic Bodywork, sports massage.
 
 ## For trainers
