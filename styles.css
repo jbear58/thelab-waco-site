@@ -14,6 +14,8 @@ h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase
 .btn-blue:hover{background:#2076d6;transform:translateY(-1px)}
 .btn-out{border:1.5px solid var(--line);color:var(--text)}
 .btn-out:hover{border-color:var(--accent);color:var(--accent)}
+.page-hero .btn-out{background:var(--text);border-color:var(--text);color:var(--bg)}
+.page-hero .btn-out:hover{background:#fff;border-color:#fff;color:#1B63B0;transform:translateY(-1px)}
 
 nav{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
@@ -58,6 +60,8 @@ section{padding:100px 0}
 .pc .meta{position:relative;padding:18px;width:100%;background:linear-gradient(180deg,transparent,rgba(10,10,12,.92))}
 .pc .nm{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:.4px}
 .pc .sp{color:var(--accent);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
+.pc .badge{position:absolute;top:10px;left:10px;z-index:2;background:rgba(10,10,12,.85);color:#fff;font:600 10px/1 sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:6px 9px;border-radius:3px}
+@media(max-width:860px){.pc .meta{padding:13px}.pc .nm{font-size:15px}.pc .sp{font-size:10px;letter-spacing:.04em}}
 .note{color:var(--muted);font-size:14px;margin-top:22px;font-style:italic}
 
 .join{position:relative;background:linear-gradient(rgba(10,10,12,.78),rgba(10,10,12,.78)),url('img/gym-floor-2.jpg') center/cover no-repeat;background-color:#15151a;border-top:1px solid var(--line)}
