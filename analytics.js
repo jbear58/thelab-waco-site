@@ -46,7 +46,9 @@
       sendEvent('coach_inquiry_click', { coach: coach, method: inquiry });
       sendEvent('generate_lead', {
         lead_type: 'coach_inquiry',
-        cta_location: locationName
+        cta_location: locationName,
+        coach: coach,
+        method: inquiry
       });
       return;
     }
